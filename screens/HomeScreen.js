@@ -81,12 +81,15 @@ function HomeScreen() {
 				<Categories />
 
 				{/* Featured rows */}
-				<FeaturedRow
-					id="1"
-					title="Featured"
-					description="Paid placements from our partners"
-					featuredCategory="featured"
-				/>
+				{featuredCategories?.map((category) => (
+					<FeaturedRow
+						key={category._id}
+						id={category._id}
+						title={category.name}
+						description={category.short_description}
+						featuredCategory="featured"
+					/>
+				))}
 			</ScrollView>
 		</SafeAreaView>
 	)
