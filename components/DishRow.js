@@ -4,22 +4,22 @@ import ReactCurrencyFormatter from "react-currency-formatter-v2"
 import { urlFor } from "../sanity"
 import { MinusCircleIcon, PlusCircleIcon } from "react-native-heroicons/solid"
 import { useDispatch, useSelector } from "react-redux"
-import { addToBasket } from "../features/basketSlice"
-import { selectBasketItemsWithId } from "../features/basketSlice"
-import { removeFromBasket } from "../features/basketSlice"
+import { addToCart } from "../features/cartSlice"
+import { selectCartItemsWithId } from "../features/cartSlice"
+import { removeFromCart } from "../features/cartSlice"
 
 const DishRow = ({ id, name, description, price, image }) => {
 	const [isPressed, setIsPressed] = useState(false)
 	const dispatch = useDispatch()
-	const item = useSelector((state) => selectBasketItemsWithId(state, id))
+	const item = useSelector((state) => selectCartItemsWithId(state, id))
 
-	const addItemToBasket = () => {
-		dispatch(addToBasket({ id, name, description, price, image }))
+	const addItemToCart = () => {
+		dispatch(addToCart({ id, name, description, price, image }))
 	}
 
-	const removeItemFromBasket = () => {
+	const removeItemFromCart = () => {
 		if (!item.length > 0) return
-		dispatch(removeFromBasket({ id }))
+		dispatch(removeFromCart({ id }))
 	}
 
 	return (
@@ -59,7 +59,7 @@ const DishRow = ({ id, name, description, price, image }) => {
 					<View className="flex-row items-center space-x-2 pb-3">
 						<TouchableOpacity
 							disabled={!item.length}
-							onPress={removeItemFromBasket}
+							onPress={removeItemFromCart}
 						>
 							<MinusCircleIcon
 								color={item.length > 0 ? "#00CCBB" : "gray"}
@@ -67,7 +67,7 @@ const DishRow = ({ id, name, description, price, image }) => {
 							/>
 						</TouchableOpacity>
 						<Text>{item.length}</Text>
-						<TouchableOpacity onPress={addItemToBasket}>
+						<TouchableOpacity onPress={addItemToCart}>
 							<PlusCircleIcon size={40} color="#00CCBB" />
 						</TouchableOpacity>
 					</View>
