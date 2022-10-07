@@ -7,12 +7,17 @@ import ReactCurrencyFormatter from "react-currency-formatter-v2"
 
 const CartIcon = () => {
 	const items = useSelector(selectCartItems)
-	const navigation = useNavigation
+	const navigation = useNavigation()
 	const cartTotal = useSelector(selectCartTotal)
+
+	if (!items.length) return null
 
 	return (
 		<View className="absolute bottom-10 w-full z-50 drop-shadow-sm">
-			<TouchableOpacity className="bg-[#00CCBB] mx-5 p-4 rounded-lg flex-row items-center space-x-1">
+			<TouchableOpacity
+				onPress={() => navigation.navigate("Cart")}
+				className="bg-[#00CCBB] mx-5 p-4 rounded-lg flex-row items-center space-x-1"
+			>
 				<Text className="text-white font-extrabold text-lg bg-[#01A296] py-1 px-2">
 					{items.length}
 				</Text>
