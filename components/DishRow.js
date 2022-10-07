@@ -62,13 +62,13 @@ const DishRow = ({ id, name, description, price, image }) => {
 							onPress={removeItemFromCart}
 						>
 							<MinusCircleIcon
-								color={item.length > 0 ? "#00CCBB" : "gray"}
+								color={item.length > 0 ? "#F53783" : "gray"}
 								size={40}
 							/>
 						</TouchableOpacity>
 						<Text>{item.length}</Text>
 						<TouchableOpacity onPress={addItemToCart}>
-							<PlusCircleIcon size={40} color="#00CCBB" />
+							<PlusCircleIcon size={40} color="#F53783" />
 						</TouchableOpacity>
 					</View>
 				</View>

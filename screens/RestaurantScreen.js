@@ -70,7 +70,7 @@ const RestaurantScreen = () => {
 						onPress={navigation.goBack}
 						className="absolute top-14 left-5 p-2 bg-gray-100 rounded-full"
 					>
-						<ArrowLeftIcon size={20} color="#00CCBB" />
+						<ArrowLeftIcon size={20} color="#F53783" />
 					</TouchableOpacity>
 				</View>
 
@@ -79,9 +79,9 @@ const RestaurantScreen = () => {
 						<Text className="text-3xl font-bold">{title}</Text>
 						<View className="flex-row space-x-2 my-1">
 							<View className="flex-row">
-								<StarIcon color="green" opacity={0.5} size={22} />
+								<StarIcon color="#F53783" opacity={0.5} size={22} />
 								<Text className="text-gray-500">
-									<Text className="text-green-500">{rating}</Text> - {genre}
+									<Text className="text-[#f06ba0]">{rating}</Text> - {genre}
 								</Text>
 							</View>
 
@@ -101,7 +101,7 @@ const RestaurantScreen = () => {
 						<Text className="pl-2 flex-1 text-md font-bold">
 							Have a food allergy?
 						</Text>
-						<ChevronRightIcon color="#00CCBB" />
+						<ChevronRightIcon color="#F53783" />
 					</TouchableOpacity>
 				</View>
 

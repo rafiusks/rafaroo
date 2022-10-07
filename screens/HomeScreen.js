@@ -52,10 +52,10 @@ function HomeScreen() {
 					<Text className="font-bold text-gray-400 text-xs">Deliver Now!</Text>
 					<Text className="font-bold text-xl">
 						Current Location
-						<ChevronDownIcon size={20} color="#00CCBB" />
+						<ChevronDownIcon size={20} color="#F53783" />
 					</Text>
 				</View>
-				<UserIcon size={35} color="#00CCBB" />
+				<UserIcon size={35} color="#F53783" />
 			</View>
 			{/* Search */}
 			<View className="flex-row items-center space-x-2 pb-2 px-4">
@@ -68,7 +68,7 @@ function HomeScreen() {
 				</View>
 				<View>
 					<AdjustmentsVerticalIcon
-						color="#00CCBB"
+						color="#F53783"
 						contentContainerStyle={{
 							paddingBottom: 100,
 						}}
